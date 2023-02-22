@@ -37,7 +37,8 @@ const UsuarioSchema = Schema({
 
 //se usa una funtion en vez de flecha para poder usar el this
 UsuarioSchema.methods.toJSON = function () {
-    const { __v, password, ...usuario } = this.toObject(); //Eliminados __v y password de la información que devuelve.
+    const { __v, password, _id, ...usuario } = this.toObject(); //Eliminados __v y password de la información que devuelve.
+    usuario.uid = _id;
     return usuario;
 }
 
