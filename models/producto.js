@@ -31,7 +31,8 @@ const ProductoSchema = Schema({
     disponible: {
         type: Boolean,
         default: true
-    }
+    },
+    img: {type: String}
 });
 
 //se usa una funtion en vez de flecha para poder usar el this
